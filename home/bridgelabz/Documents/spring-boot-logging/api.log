@@ -1,0 +1,295 @@
+"2020-02-03 15:00:04 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 13823 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:00:04 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:00:04 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:00:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:00:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:00:05 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:00:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:00:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:00:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:00:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:00:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:00:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:00:06 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:00:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:00:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:00:07 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:00:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:00:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:00:08 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:00:08 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:00:08 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:00:08 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:00:08 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:00:08 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:00:08 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:00:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:00:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:00:17 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 13881 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:00:17 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:00:17 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:00:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:00:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:00:18 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:00:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:00:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:00:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:00:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:00:19 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:00:19 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:00:19 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:00:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:00:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:00:20 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:00:21 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:00:21 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:00:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:00:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:00:22 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:00:22 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:00:22 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:00:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:00:22 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:00:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:00:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:03:32 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 14081 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:03:32 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:03:32 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:03:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:03:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:03:34 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:03:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:03:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:03:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:03:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:03:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:03:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:03:35 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:03:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:03:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:03:35 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:03:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:03:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:03:36 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:03:36 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:03:36 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:03:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:03:36 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:03:36 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:03:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:03:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:03:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:07:15 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 14244 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:07:15 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:07:15 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:07:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:07:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:07:17 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:07:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:07:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:07:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:07:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:07:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:07:17 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:07:17 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:07:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:07:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:07:18 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:07:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:07:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:07:19 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:07:19 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:07:19 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:07:19 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:07:19 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:07:19 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:07:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:07:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:07:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:07:37 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 14298 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:07:37 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:07:37 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:07:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:07:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:07:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:07:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:07:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:07:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:07:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:07:39 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:07:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:07:39 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:07:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:07:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:07:40 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:07:40 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:07:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:07:41 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:07:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:07:41 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:07:41 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:07:41 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:07:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:07:41 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:07:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:07:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:09:53 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 14467 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:09:53 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:09:53 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:09:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:09:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:09:54 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:09:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:09:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:09:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:09:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:09:55 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:09:55 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:09:55 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:09:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:09:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:09:56 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:09:56 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:09:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:09:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:09:57 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:09:57 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:09:57 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:09:57 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:09:57 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:09:57 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:09:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:09:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2020-02-03 15:10:04 [main] INFO  c.bridgelabz.FundooNotesApplication - Starting FundooNotesApplication on bridgelabz-LIVA-Z2V with PID 14517 (/home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes/target/classes started by bridgelabz in /home/bridgelabz/Documents/workspace-spring-tool-suite-4-4.5.1.RELEASE/FundooNotes)
+""2020-02-03 15:10:04 [main] DEBUG c.bridgelabz.FundooNotesApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+""2020-02-03 15:10:04 [main] INFO  c.bridgelabz.FundooNotesApplication - No active profile set, falling back to default profiles: default
+""2020-02-03 15:10:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2020-02-03 15:10:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53ms. Found 0 JPA repository interfaces.
+""2020-02-03 15:10:05 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2020-02-03 15:10:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+""2020-02-03 15:10:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2020-02-03 15:10:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+""2020-02-03 15:10:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2020-02-03 15:10:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2020-02-03 15:10:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.10.Final}
+""2020-02-03 15:10:06 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+""2020-02-03 15:10:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2020-02-03 15:10:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2020-02-03 15:10:07 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+""2020-02-03 15:10:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2020-02-03 15:10:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:10:08 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2020-02-03 15:10:08 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:10:08 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2020-02-03 15:10:08 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2020-02-03 15:10:08 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+""2020-02-03 15:10:08 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2020-02-03 15:10:08 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2020-02-03 15:10:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2020-02-03 15:10:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"
