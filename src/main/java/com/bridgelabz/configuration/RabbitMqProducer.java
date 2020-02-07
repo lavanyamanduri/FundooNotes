@@ -16,6 +16,7 @@ public class RabbitMqProducer {
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
 
+	
 	@Autowired
 	private MailSendingUtil sendingMail;
 
