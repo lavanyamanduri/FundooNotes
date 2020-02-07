@@ -9,14 +9,13 @@ import org.springframework.stereotype.Component;
 import com.bridgelabz.dto.MailDto;
 import com.bridgelabz.utility.MailSendingUtil;
 
-
 @Component
 public class RabbitMqProducer {
 
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
 
-	
+
 	@Autowired
 	private MailSendingUtil sendingMail;
 

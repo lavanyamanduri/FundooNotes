@@ -1,5 +1,6 @@
 package com.bridgelabz.responses;
 
+
 public class Responses {
 
 	private String message;

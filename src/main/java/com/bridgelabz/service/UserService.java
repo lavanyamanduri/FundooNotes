@@ -9,7 +9,6 @@ import com.bridgelabz.model.UserDetails;
 
 public interface UserService {
 
-	
 	UserDetails save(UserDto user);
 	UserDetails login(LoginDetails login);
 	UserDetails mailVerification(String token);
