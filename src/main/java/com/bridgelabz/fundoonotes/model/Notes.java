@@ -65,7 +65,7 @@ public class Notes {
 
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "uesr_id")
+	@JoinColumn(name = "user_id")
 	private UserDetails user;
 
 	@JsonIgnore

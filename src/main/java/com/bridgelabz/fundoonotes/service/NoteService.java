@@ -11,7 +11,7 @@ import com.bridgelabz.fundoonotes.model.Notes;
 public interface NoteService {
 	
 	 Notes addNotes(NotesDto notes,String token);
-	  boolean changeColor(String color,Long id,String token);
+	 boolean changeColor(String color,Long id,String token);
 	 Integer changingPin(Long noteId,String token);
 	 Integer archievingStatus(Long noteId,String token);
 	 Long updateNotes(NotesDto notes,String token,Long noteId) throws IOException;
