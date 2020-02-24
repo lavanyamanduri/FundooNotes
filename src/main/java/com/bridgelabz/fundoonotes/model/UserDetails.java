@@ -1,7 +1,7 @@
 package com.bridgelabz.fundoonotes.model;
 
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,9 +27,6 @@ import lombok.Setter;
 @Table(name = "User",
 uniqueConstraints=@UniqueConstraint(columnNames= {"Mobile_Number","User_Mail"})
 )
-
-
-
 
 public class UserDetails {
 
@@ -60,7 +57,7 @@ public class UserDetails {
 	private String mobileNumber;
 
 	@Column(name = "Created_Time")
-	private Date created_Time;
+	private LocalDateTime created_Time;
 
 	@Column(columnDefinition = "boolean default false")
 	private boolean is_Verified;

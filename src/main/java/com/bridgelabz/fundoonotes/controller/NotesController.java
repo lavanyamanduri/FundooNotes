@@ -22,12 +22,15 @@ import com.bridgelabz.fundoonotes.model.Notes;
 import com.bridgelabz.fundoonotes.responses.Responses;
 import com.bridgelabz.fundoonotes.service.NoteService;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 public class NotesController {
 	@Autowired
 	private NoteService noteService;
 
 	@PostMapping("/noteCreation/{token}")
+	@ApiOperation(value = "Creation of note")
 	public ResponseEntity<Responses> createNote(@RequestBody NotesDto note, @PathVariable("token") String token) {
 		Notes result = noteService.addNotes(note, token);
 		if (result != null) {
@@ -37,6 +40,7 @@ public class NotesController {
 	}
 
 	@PutMapping("/changingColor/{token}")
+	@ApiOperation(value = "Changing color of a note ")
 	public ResponseEntity<Responses> changingColor(@RequestParam String color, @RequestParam Long noteId,
 			@PathVariable("token") String token) {
 		boolean result = noteService.changeColor(color, noteId, token);
@@ -48,6 +52,7 @@ public class NotesController {
 	}
 
 	@PutMapping("/pinAndUnpin/{token}")
+	@ApiOperation(value = "To pin and Upin the note")
 	public ResponseEntity<Responses> changePinning(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.changingPin(noteId, token);
 		if (result == 1) {
@@ -59,6 +64,7 @@ public class NotesController {
 	}
 
 	@PutMapping("/Archive or unarchieve/{token}")
+	@ApiOperation(value = "Archive or UnArchive a note")
 	public ResponseEntity<Responses> chageArchieving(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.archievingStatus(noteId, token);
 		if (result == 1) {
@@ -70,6 +76,7 @@ public class NotesController {
 	}
 
 	@PutMapping("/updateNote/{token}")
+	@ApiOperation(value = "To update the note")
 	public ResponseEntity<Responses> updateNotes(@RequestParam Long noteId, @RequestBody NotesDto notes,
 			@PathVariable("token") String token) throws IOException {
 		Long result = noteService.updateNotes(notes, token, noteId);
@@ -79,7 +86,8 @@ public class NotesController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("not added", 400));
 	}
 
-	@DeleteMapping("/deleteNotes/{token}")
+	@DeleteMapping("/trash/{token}")
+	@ApiOperation(value = "To delete the note")
 	public ResponseEntity<Responses> updateTrash(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.setTrash(noteId, token);
 		if (result == 1) {
@@ -92,6 +100,7 @@ public class NotesController {
 	}
 
 	@DeleteMapping("/deleteNotes-permanantly/{token}")
+	@ApiOperation(value = "To delete the notes permanantly")
 	public ResponseEntity<Responses> deleteNotes(@RequestParam Long noteId, @PathVariable("token") String token) {
 		Long result = noteService.deletePermanent(noteId, token);
 		if (result != null) {
@@ -103,7 +112,8 @@ public class NotesController {
 	}
 
 	@PutMapping("/remindMeNotes/{token}")
-	public ResponseEntity<Responses> remindNotes(@RequestParam Long noteId, @RequestBody RemindDto remindDto,
+	@ApiOperation(value = "To Remind the not at particular time")
+	public ResponseEntity<Responses> remindNotes(@RequestParam Long noteId, @RequestParam RemindDto remindDto,
 			@PathVariable("token") String token) {
 		Notes result = noteService.remind(remindDto, noteId, token);
 		if (result != null) {
@@ -114,6 +124,7 @@ public class NotesController {
 	}
 
 	@GetMapping("/LisOfNotes/{token}")
+	@ApiOperation(value = "List of the notes")
 	public ResponseEntity<Responses> getAllNotes(@PathVariable("token") String token) {
 		List<Notes> result = noteService.getListOfNotes(token);
 		if (result != null) {
@@ -124,6 +135,7 @@ public class NotesController {
 	}
 
 	@GetMapping("/listOfNotes-ByName/{token}")
+	@ApiOperation(value = "List of the notes by name")
 	public ResponseEntity<Responses> sortByName(@PathVariable("token") String token) {
 		List<Notes> result = noteService.sortByName(token);
 		if (result != null) {
@@ -134,6 +146,7 @@ public class NotesController {
 	}
 
 	@GetMapping("/listOfNotes-ByDate/{token}")
+	@ApiOperation(value ="List of notes by date")
 	public ResponseEntity<Responses> sortByDate(@PathVariable("token") String token) {
 		List<LocalDateTime> result = noteService.sortByDate(token);
 		if (result != null) {
@@ -144,6 +157,7 @@ public class NotesController {
 	}
 
 	@GetMapping("/Archieve-notesList/{token}")
+	@ApiOperation(value = "Archive the notes list")
 	public ResponseEntity<Responses> getAllArchieve(@PathVariable("token") String token) {
 		List<Notes> result = noteService.getAllarchieveNotes(token);
 		if (result != null) {
@@ -154,6 +168,7 @@ public class NotesController {
 	}
 
 	@GetMapping("/search-ById")
+	@ApiOperation(value = "Search the notes by Id")
 	public ResponseEntity<Responses> getNotesById(@RequestParam Long noteId) {
 		Notes result = noteService.searchById(noteId);
 		if (result != null) {
