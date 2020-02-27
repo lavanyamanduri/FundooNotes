@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.serviceImpl;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,8 @@ public class CollaboratorServiceImpl implements CollaboratorService {
 	@Autowired
 	private CollaboratorRepository collaboRepo;
 	
+	/* Method to SaveData in Collaborator */
+	
 	@Override
 	public Collaborator saveData(String collaboratorMail,Long noteId) {
      Notes notes = noteRepos.findByNoteId(noteId);
@@ -36,6 +42,8 @@ public class CollaboratorServiceImpl implements CollaboratorService {
 		return null;
 	}
 
+	/* Method generating to delete the data */
+	
 	@Override
 	public boolean deleteData(String collaboratorMail) {
       Collaborator collaborator = collaboRepo.findByCmail(collaboratorMail);
@@ -46,7 +54,9 @@ public class CollaboratorServiceImpl implements CollaboratorService {
       }
 		return false;
 	}
-
+	
+	/* Method generating the listOfCollaborators */
+	
 	@Override
 	public List<Collaborator> getListOfCollaberators(Long noteId) {
        Notes notes = noteRepos.findByNoteId(noteId);

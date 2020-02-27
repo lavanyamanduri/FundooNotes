@@ -4,19 +4,14 @@ package com.bridgelabz.fundoonotes.model;
  *  author : Lavanya Manduri
  */
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,25 +23,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "label")
-public class Label {
+@Table(name = "profilepicture")
+public class ProfilePic {
+
+	/* Fields Required for Profile Picture */
 	
-	/* Fields required for Label Creation */
-
 	@Id
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long labelId;
+	private Long profileId;
 
-	@Column(name = "labelName")
-	private String labelName;
+	@Column(name = "profile")
+	private String profileName;
 
 	@ManyToOne
-	@JoinColumn(name = "userId")
-	@JsonIgnore
-	private UserDetails labelUser;
-
-	@JsonIgnore
-	@ManyToMany(mappedBy = "labels")
-	private List<Notes> notes;
-
+	@JoinColumn(name = "user_id")
+	private UserDetails user;
 }

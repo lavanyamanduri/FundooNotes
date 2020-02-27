@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.serviceImpl;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -49,11 +53,13 @@ public class NoteServImpl implements NoteService {
 
 	LocalDateTime dateTime = LocalDateTime.of(currentDate, currentTime);
 
+	/* Method for Adding the Notes */
+	
 	@SuppressWarnings("unused")
 	@Cacheable(value = "note", key = "#result.getNoteId()", condition = "#result!=null")
 	public Notes addNotes(NotesDto notes, String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		log.info("creating the notes for " + user.getUserMail());
 		Long id = user.getId();
 		if (user != null) {
@@ -69,11 +75,12 @@ public class NoteServImpl implements NoteService {
 		return null;
 
 	}
-
+	/* Method generating for Changing Color */
+	
 	@Override
 	public boolean changeColor(String color, Long noteId, String token) {
 		String token1 = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(token1);
+		UserDetails user = userRepo.findById(token1);
 		log.info("changing the note color for this note "+noteId);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
@@ -87,7 +94,7 @@ public class NoteServImpl implements NoteService {
 	@Override
 	public Integer changingPin(Long noteId, String token) {
 		String parseToken = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(parseToken);
+		UserDetails user = userRepo.findById(parseToken);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note.isPin()) {
@@ -101,10 +108,12 @@ public class NoteServImpl implements NoteService {
 		}
 	}
 
+	/* Method for generating the AchiveStatus */
+	
 	@Override
 	public Integer archievingStatus(Long noteId, String token) {
 		String parseToken = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(parseToken);
+		UserDetails user = userRepo.findById(parseToken);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note.isArchieve()) {
@@ -117,12 +126,14 @@ public class NoteServImpl implements NoteService {
 		}
 		return -1;
 	}
-
+	
+	/* Method for generating Notes Updation */
+	
 	@CachePut(value = "note", key = "#noteId", condition = "#result!=null")
 	@Override
 	public Long updateNotes(NotesDto notes, String token, Long noteId) throws IOException {
 		String parseToken = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(parseToken);
+		UserDetails user = userRepo.findById(parseToken);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note != null) {
@@ -135,11 +146,13 @@ public class NoteServImpl implements NoteService {
 		}
 		return null;
 	}
-
+	
+	/* Method for Trash */
+	
 	@Override
 	public Integer setTrash(Long noteId, String token) {
 		String parseToken = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(parseToken);
+		UserDetails user = userRepo.findById(parseToken);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note.isTrash()) {
@@ -153,12 +166,14 @@ public class NoteServImpl implements NoteService {
 		}
 		return -1;
 	}
-
+	
+	/* Method for deleting the notes permanently */
+	
 	@CacheEvict(value = "note", key = "#noteId", condition = "#result!=null")
 	@Override
 	public Long deletePermanent(Long noteId, String token) {
 		String parseToken = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(parseToken);
+		UserDetails user = userRepo.findById(parseToken);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note != null) {
@@ -173,10 +188,12 @@ public class NoteServImpl implements NoteService {
 		return null;
 	}
 
+	/* Method for generating the remainder */
+	
 	@Override
 	public Notes remind(RemindDto remindDto, Long noteId, String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		Long id = user.getId();
 		Notes note = notesRepository.findByNoteId(noteId);
 		if (note != null) {
@@ -187,22 +204,26 @@ public class NoteServImpl implements NoteService {
 		}
 		return null;
 	}
-
+	
+	/* Method for generating the list of notes */
+	
 	@Override
 	public List<Notes> getListOfNotes(String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		if (user != null) {
 			Long id = user.getId();
 			return notesRepository.getAllNotes(id);
 		}
 		return null;
 	}
-
+	
+	/* Method for Notes Sorting by name */
+	
 	@Override
 	public List<Notes> sortByName(String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		if (user != null) {
 			Long id = user.getId();
 			List<Notes> notes = notesRepository.getAllNotesByName(id);
@@ -211,11 +232,13 @@ public class NoteServImpl implements NoteService {
 		}
 		return null;
 	}
-
+	
+	/* Method generating for notes using SortByDate */
+	
 	@Override
 	public List<LocalDateTime> sortByDate(String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		if (user != null) {
 			Long id = user.getId();
 			List<Notes> notes = notesRepository.getAllNotes(id);
@@ -225,17 +248,20 @@ public class NoteServImpl implements NoteService {
 		}
 		return null;
 	}
-
+	
+	/* Method for listing the Archive Notes */
 	@Override
 	public List<Notes> getAllarchieveNotes(String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findByEmail(tokenDetail);
+		UserDetails user = userRepo.findById(tokenDetail);
 		if (user != null) {
 			Long id = user.getId();
 			return notesRepository.selectArchieve(id);
 		}
 		return null;
 	}
+	
+	/* Method for generating the NotesById */
 
 	@Override
 	public Notes searchById(Long noteId) {

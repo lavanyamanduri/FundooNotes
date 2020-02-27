@@ -1,5 +1,8 @@
 package com.bridgelabz.fundoonotes.serviceImpl;
 
+/*
+ *  author : Lavanya Manduri
+ */
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +16,8 @@ import com.bridgelabz.fundoonotes.dto.LoginDetails;
 import com.bridgelabz.fundoonotes.dto.MailDto;
 import com.bridgelabz.fundoonotes.dto.ResetPassword;
 import com.bridgelabz.fundoonotes.dto.UserDto;
+import com.bridgelabz.fundoonotes.exception.EmailAlreadyExists;
+import com.bridgelabz.fundoonotes.exception.LabelNameAlreadyExistsException;
 import com.bridgelabz.fundoonotes.model.UserDetails;
 import com.bridgelabz.fundoonotes.repository.UserRepository;
 import com.bridgelabz.fundoonotes.service.UserServ;
@@ -43,6 +48,8 @@ public class UserServImpl implements UserServ {
 	private JwtUtil jwt;
               
 	Date date = new Date();
+	
+	/* Method for generating the UserDetails */
 
 	public UserDetails save(UserDto user) {
 		UserDetails checkMail = userRepo.findByEmail(user.getUserMail());
@@ -66,10 +73,13 @@ public class UserServImpl implements UserServ {
 		}
 	}
 
+	/* Method for generating the LoginDetails */
+	
 	@Override
 	public UserDetails login(LoginDetails login) {
 		UserDetails getMail = userRepo.findByEmail(login.getEmail());
 		log.info("login details from database " + getMail);
+		try {
 		if (getMail.getUserMail().equals(login.getEmail())) {
 			if (getMail.is_Verified()) {
 				boolean passwordCheck = bCryptPasswordEncoder.matches(login.getPassword(), getMail.getPassword());
@@ -88,9 +98,16 @@ public class UserServImpl implements UserServ {
 			}
 			return null;
 		} else {
-			return null;
+			throw new EmailAlreadyExists("email already exists..");
 		}
+		}
+		catch(Exception e) {
+			log.error("error " + e.getMessage() + " occured while adding the email");
+		}
+		return null;
 	}
+	
+	/* Method for generating the Mail Verification */
 
 	@Override
 	public UserDetails mailVerification(String token) {
@@ -110,6 +127,8 @@ public class UserServImpl implements UserServ {
 		}
 		return null;
 	}
+	
+	/* Method for Forgot Password */
 
 	@Override
 	public UserDetails forgotPassword(String email) {
@@ -129,6 +148,8 @@ public class UserServImpl implements UserServ {
 		return null;
 	}
 
+	/* Method for Updating the Password */
+	
 	@Override
 	public boolean updatePassword(ResetPassword password, String token) {
 		String email = jwt.parse(token);
@@ -143,6 +164,8 @@ public class UserServImpl implements UserServ {
 		}
 		return false;
 	}
+	
+	/* Method for Listing all the Users */
 
 	@Override
 	public List<UserDetails> getAllUsers(String str) {

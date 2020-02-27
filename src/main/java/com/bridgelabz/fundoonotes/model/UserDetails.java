@@ -1,6 +1,10 @@
 package com.bridgelabz.fundoonotes.model;
 
+/*
+ *  author : Lavanya Manduri
+ */
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -19,6 +23,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@SuppressWarnings("serial")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -28,7 +33,9 @@ import lombok.Setter;
 uniqueConstraints=@UniqueConstraint(columnNames= {"Mobile_Number","User_Mail"})
 )
 
-public class UserDetails {
+public class UserDetails implements Serializable{
+	
+	/*Field Required for the Registration */
 
 	@Id
 	@Column(name = "Id")
@@ -51,7 +58,7 @@ public class UserDetails {
 	private String password;
 
 	@Column(name = "Mobile_Number")
-	 @NotEmpty(message = "Phone number is required")
+	@NotEmpty(message = "Phone number is required")
     @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
              message="Mobile number is invalid")
 	private String mobileNumber;

@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.repository;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +22,9 @@ public interface UserRepository extends JpaRepository<UserDetails, Long> {
 
 	@Query(value = "select * from user where user_Mail=?", nativeQuery = true)
 	UserDetails findByEmail(String user_mail);
+	
+	@Query(value = "select * from user where Id=?", nativeQuery = true)
+	UserDetails findById(String id);
 
 	@Modifying
 	@Query(value = "insert into user(first_name,last_name,user_mail,password,mobile_number,created_time)"
@@ -35,5 +42,6 @@ public interface UserRepository extends JpaRepository<UserDetails, Long> {
 
 	@Query(value = "select * from user", nativeQuery = true)
 	List<UserDetails> getUserList();
+
 
 }

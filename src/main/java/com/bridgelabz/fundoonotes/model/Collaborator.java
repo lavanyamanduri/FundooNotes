@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.model;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +26,8 @@ import lombok.Setter;
 @Table(name = "Collaborators")
 public class Collaborator {
 
+	/* Fields required for Colaborator */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "collaborator_id")

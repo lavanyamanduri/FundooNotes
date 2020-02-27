@@ -1,5 +1,8 @@
 package com.bridgelabz.fundoonotes.controller;
 
+/* 
+ * author: Lavanya Manduri
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +18,17 @@ import com.bridgelabz.fundoonotes.model.Collaborator;
 import com.bridgelabz.fundoonotes.responses.Responses;
 import com.bridgelabz.fundoonotes.service.CollaboratorService;
 
+import io.swagger.annotations.Api;
+
+@Api( description = "API's for the Collaborator controller")
 @RestController
 public class CollaboratorController {
 
 	@Autowired
 	private CollaboratorService collaboratorServ;
-
+	
+	/* API for Adding the Collaborator */
+	
 	@PostMapping("/AddCollaborator/")
 	public ResponseEntity<Responses> insertData(@RequestParam String collaboratorMailId, @RequestParam Long noteId) {
 		Collaborator result = collaboratorServ.saveData(collaboratorMailId, noteId);
@@ -30,6 +38,8 @@ public class CollaboratorController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong!!", 400));
 	}
 
+	/* API for Deleting the Collaborator */
+	
 	@DeleteMapping("/delete-collaborator/")
 	public ResponseEntity<Responses> deleteData(@RequestParam String collaboratorMailId) {
 		boolean result = collaboratorServ.deleteData(collaboratorMailId);
@@ -38,7 +48,9 @@ public class CollaboratorController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong!!", 400));
 	}
-
+	
+	/* API for Listing the Collaborator */
+	
 	@GetMapping("/ListOfCollaborators/")
 	public ResponseEntity<Responses> getAllCollaborators(@RequestParam Long noteId) {
 		List<Collaborator> result = collaboratorServ.getListOfCollaberators(noteId);

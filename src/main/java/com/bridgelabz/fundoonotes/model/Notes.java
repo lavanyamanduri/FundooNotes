@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.model;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -32,6 +36,7 @@ import lombok.Setter;
 @Document(indexName = "FundooNotes",type = "notes",shards = 1)
 public class Notes {
 
+	/* Fields required for Note creation */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long noteId;

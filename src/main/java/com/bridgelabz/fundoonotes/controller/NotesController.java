@@ -1,5 +1,8 @@
 package com.bridgelabz.fundoonotes.controller;
 
+/*
+ *  author: Lavanya Manduri
+ */
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,13 +25,17 @@ import com.bridgelabz.fundoonotes.model.Notes;
 import com.bridgelabz.fundoonotes.responses.Responses;
 import com.bridgelabz.fundoonotes.service.NoteService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+@Api( description = "API's for the notes controller")
 
 @RestController
 public class NotesController {
 	@Autowired
 	private NoteService noteService;
-
+	
+	/* API for Note Creation */
+	
 	@PostMapping("/noteCreation/{token}")
 	@ApiOperation(value = "Creation of note")
 	public ResponseEntity<Responses> createNote(@RequestBody NotesDto note, @PathVariable("token") String token) {
@@ -38,6 +45,8 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("not added", 400));
 	}
+	
+	/* API for Color Changing */
 
 	@PutMapping("/changingColor/{token}")
 	@ApiOperation(value = "Changing color of a note ")
@@ -51,6 +60,8 @@ public class NotesController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong..", 400));
 	}
 
+	/* API for Pin And To UnPin */
+	
 	@PutMapping("/pinAndUnpin/{token}")
 	@ApiOperation(value = "To pin and Upin the note")
 	public ResponseEntity<Responses> changePinning(@RequestParam Long noteId, @PathVariable("token") String token) {
@@ -62,8 +73,10 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong..", 400));
 	}
-
-	@PutMapping("/Archive or unarchieve/{token}")
+	
+	/*  API for Archive or UnArchive */
+	
+	@PutMapping("/Archive or unarchive/{token}")
 	@ApiOperation(value = "Archive or UnArchive a note")
 	public ResponseEntity<Responses> chageArchieving(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.archievingStatus(noteId, token);
@@ -74,7 +87,8 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong..", 400));
 	}
-
+	/* API for Updating the note */
+	
 	@PutMapping("/updateNote/{token}")
 	@ApiOperation(value = "To update the note")
 	public ResponseEntity<Responses> updateNotes(@RequestParam Long noteId, @RequestBody NotesDto notes,
@@ -85,7 +99,9 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("not added", 400));
 	}
-
+	
+	/* API for Trash */
+	
 	@DeleteMapping("/trash/{token}")
 	@ApiOperation(value = "To delete the note")
 	public ResponseEntity<Responses> updateTrash(@RequestParam Long noteId, @PathVariable("token") String token) {
@@ -98,7 +114,9 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong..", 400));
 	}
-
+	
+	/* API for Deleting the notes Permanently*/
+	
 	@DeleteMapping("/deleteNotes-permanantly/{token}")
 	@ApiOperation(value = "To delete the notes permanantly")
 	public ResponseEntity<Responses> deleteNotes(@RequestParam Long noteId, @PathVariable("token") String token) {
@@ -111,6 +129,8 @@ public class NotesController {
 				.body(new Responses("notes not deleted something went wrong!", 400));
 	}
 
+	/* API for Remind the Notes at Particular Time */
+	
 	@PutMapping("/remindMeNotes/{token}")
 	@ApiOperation(value = "To Remind the not at particular time")
 	public ResponseEntity<Responses> remindNotes(@RequestParam Long noteId, @RequestParam RemindDto remindDto,
@@ -123,6 +143,8 @@ public class NotesController {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("something went wrong!", 400));
 	}
 
+	/* API for listing all the notes */
+	
 	@GetMapping("/LisOfNotes/{token}")
 	@ApiOperation(value = "List of the notes")
 	public ResponseEntity<Responses> getAllNotes(@PathVariable("token") String token) {
@@ -133,7 +155,9 @@ public class NotesController {
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("something went wrong..", 201, result));
 
 	}
-
+	
+	/* API for the list of Notes by name */
+	
 	@GetMapping("/listOfNotes-ByName/{token}")
 	@ApiOperation(value = "List of the notes by name")
 	public ResponseEntity<Responses> sortByName(@PathVariable("token") String token) {
@@ -145,6 +169,8 @@ public class NotesController {
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("something went wrong", 201, result));
 	}
 
+	/* API for the list of Notes by Date */
+	
 	@GetMapping("/listOfNotes-ByDate/{token}")
 	@ApiOperation(value ="List of notes by date")
 	public ResponseEntity<Responses> sortByDate(@PathVariable("token") String token) {
@@ -155,7 +181,9 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("something went wrong", 201, result));
 	}
-
+	
+	/* API for list out the archive notes */
+	
 	@GetMapping("/Archieve-notesList/{token}")
 	@ApiOperation(value = "Archive the notes list")
 	public ResponseEntity<Responses> getAllArchieve(@PathVariable("token") String token) {
@@ -166,7 +194,9 @@ public class NotesController {
 		}
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("something went wrong", 201, result));
 	}
-
+	
+	/* API for searching the note by Id */
+	
 	@GetMapping("/search-ById")
 	@ApiOperation(value = "Search the notes by Id")
 	public ResponseEntity<Responses> getNotesById(@RequestParam Long noteId) {

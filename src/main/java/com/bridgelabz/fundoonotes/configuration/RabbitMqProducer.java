@@ -1,5 +1,9 @@
 package com.bridgelabz.fundoonotes.configuration;
 
+/*
+ *  author : Lavanya Manduri
+ */
+
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +16,8 @@ import com.bridgelabz.fundoonotes.utility.MailSendingUtil;
 
 @Component
 public class RabbitMqProducer {
+	
+	/* Configuration for RabbitMq Producer */
 
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
