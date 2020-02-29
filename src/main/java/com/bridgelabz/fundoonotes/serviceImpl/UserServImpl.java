@@ -17,7 +17,7 @@ import com.bridgelabz.fundoonotes.dto.MailDto;
 import com.bridgelabz.fundoonotes.dto.ResetPassword;
 import com.bridgelabz.fundoonotes.dto.UserDto;
 import com.bridgelabz.fundoonotes.exception.EmailAlreadyExists;
-import com.bridgelabz.fundoonotes.exception.LabelNameAlreadyExistsException;
+import com.bridgelabz.fundoonotes.exception.UserNotVerifiedException;
 import com.bridgelabz.fundoonotes.model.UserDetails;
 import com.bridgelabz.fundoonotes.repository.UserRepository;
 import com.bridgelabz.fundoonotes.service.UserServ;
@@ -76,8 +76,12 @@ public class UserServImpl implements UserServ {
 	/* Method for generating the LoginDetails */
 	
 	@Override
-	public UserDetails login(LoginDetails login) {
+	public UserDetails login(LoginDetails login) throws Exception{
 		UserDetails getMail = userRepo.findByEmail(login.getEmail());
+		
+		if(getMail.is_Verified()) {
+			
+		
 		log.info("login details from database " + getMail);
 		try {
 		if (getMail.getUserMail().equals(login.getEmail())) {
@@ -105,12 +109,17 @@ public class UserServImpl implements UserServ {
 			log.error("error " + e.getMessage() + " occured while adding the email");
 		}
 		return null;
+		}
+		else {
+			throw new EmailAlreadyExists(login.getEmail()+"");
+		}
 	}
 	
 	/* Method for generating the Mail Verification */
 
 	@Override
 	public UserDetails mailVerification(String token) {
+		
 		try {
 			String mail = jwt.parse(token);
 			log.info("parsing the token to mail " + mail);
@@ -120,7 +129,8 @@ public class UserServImpl implements UserServ {
 				return userdetails;
 			} else {
 				log.info("user already verified");
-				return userdetails;
+				throw new UserNotVerifiedException(isValidMail.getUserMail()+" not verified");
+				
 			}
 		} catch (Exception e) {
 			log.error("error " + e.getMessage() + " occured while verifying the mail");

@@ -28,7 +28,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProfilePicServImpl implements ProfilePicService {
 
-	
 	@Autowired
 	private AmazonS3 amazonS3;
 
@@ -95,6 +94,7 @@ public class ProfilePicServImpl implements ProfilePicService {
 		}
 		return false;
 	}
+
 
 	
 }

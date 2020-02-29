@@ -69,7 +69,7 @@ public class UserController {
 	    /* API for Login */
 	    
 	    @PostMapping("/login")
-		public ResponseEntity<Responses> logging(@RequestBody LoginDetails details) {
+		public ResponseEntity<Responses> logging(@RequestBody LoginDetails details) throws Exception {
 			UserDetails result = userService.login(details);
 			if (result != null) {
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("Successfully login", 200));

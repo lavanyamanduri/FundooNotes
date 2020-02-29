@@ -16,7 +16,7 @@ public interface UserServ {
 	/* Methods for Registration and login */
     
 	UserDetails save(UserDto user);
-	UserDetails login(LoginDetails login);
+	UserDetails login(LoginDetails login) throws Exception;
 	UserDetails mailVerification(String token);
 	UserDetails forgotPassword(String email);
 	boolean updatePassword(ResetPassword password, String token);

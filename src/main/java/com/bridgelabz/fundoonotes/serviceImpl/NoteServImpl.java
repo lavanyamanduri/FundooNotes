@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import com.bridgelabz.fundoonotes.dto.NotesDto;
 import com.bridgelabz.fundoonotes.dto.RemindDto;
+import com.bridgelabz.fundoonotes.exception.NoteIdNotFoundException;
 import com.bridgelabz.fundoonotes.model.Notes;
 import com.bridgelabz.fundoonotes.model.UserDetails;
 import com.bridgelabz.fundoonotes.repository.NotesRepository;
@@ -266,12 +267,17 @@ public class NoteServImpl implements NoteService {
 	@Override
 	public Notes searchById(Long noteId) {
 		Notes note = notesRepository.findByNoteId(noteId);
+		
 		if (note != null) {
 			String searchId = String.valueOf(note.getNoteId());
 			elasticSearchService.searchById(searchId);
 			return note;
 		}
-		return null;
+		else
+		{
+			throw new NoteIdNotFoundException(note.getNoteId()+" not found");
+		}
+	
 	}
 
 }
