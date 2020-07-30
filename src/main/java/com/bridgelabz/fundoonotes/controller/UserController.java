@@ -33,27 +33,22 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("User")
-@Api( description = "API's for t he user controller")
+@RequestMapping("user")
 
 public class UserController {
-	
-	
 		
 	private Validator validator;
 	
 		@Autowired
 		private UserServ userService;
 		
-		@RequestMapping(method=RequestMethod.POST)
-		@ApiOperation(value = "Registration for new user")
-	
 		/* API for Registration */
 		
+		@ApiOperation(value = "Registration for new user")
 		@PostMapping(value="/registration")
-		public ResponseEntity<Responses> getDetails(@Valid @RequestBody  UserDto user,BindingResult res) {
+		public ResponseEntity<Responses> getDetails(@Valid @RequestBody  UserDto user) {
 			UserDetails result = userService.save(user);
-			if (result != null && res.hasErrors()) {
+			if (result != null ) {
 			
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("Sucessfully registered", 200, result));
 			}
@@ -119,7 +114,7 @@ public class UserController {
 
 	    /*   API for getting all the users */
 
-		@GetMapping("/getAllUsers")
+		@GetMapping("/getlist")
 	    @ApiOperation(value = "Gets the list of all the user")
 
 		public ResponseEntity<Responses> getAllUsers(@RequestParam String typeOfUser) {

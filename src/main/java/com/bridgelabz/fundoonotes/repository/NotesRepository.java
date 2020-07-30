@@ -21,8 +21,8 @@ import com.bridgelabz.fundoonotes.model.Notes;
 public interface NotesRepository extends JpaRepository<Notes, Long> {
 
 	@Modifying
-	@Query(value = "insert into notes(title,content,created_time,user_id) values(?,?,?,?)", nativeQuery = true)
-	void insertNotes(String title, String content, LocalDateTime created_time, Long id);
+	@Query(value = "insert into notes(title,content,created_time,pinNote,archievNote,color,remindAt,remindMe,deleteNote,user_id) values(?,?,?,?)", nativeQuery = true)
+	void insertNotes(String title, String content, LocalDateTime created_time,Boolean pinNote,Boolean archievNote,String color,LocalDateTime remindAt,String remindMe,Boolean deleteNote, Long id);
 
 	@Query(value = "select * from notes where note_id=?", nativeQuery = true)
 	Notes findByNoteId(Long note_id);

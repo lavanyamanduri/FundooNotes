@@ -25,7 +25,6 @@ import com.bridgelabz.fundoonotes.service.LabelService;
 
 import io.swagger.annotations.Api;
 
-@Api( description = "API's for the label controller")
 @RestController
 public class LabelController {
 
@@ -34,7 +33,7 @@ public class LabelController {
 	
 	/* API for creating the Label */
 
-	@PostMapping("/create-Label/{token}")
+	@PostMapping("/label/create/{token}")
 	public ResponseEntity<Responses> createLabel(@RequestBody LabelDto labelDto, @PathVariable("token") String token) {
 		Label result = labelService.createLabel(labelDto, token);
 		if (result != null) {
@@ -45,7 +44,7 @@ public class LabelController {
 
 	/* API for Updating the Label */
 	
-	@PutMapping("/update-label/{token}")
+	@PutMapping("/label/update/{token}")
 	public ResponseEntity<Responses> updateLabel(@RequestParam Long id, @RequestParam String labelName,
 			@PathVariable("token") String token) {
 		Long result = labelService.updateLabel(id, labelName, token);
@@ -58,7 +57,7 @@ public class LabelController {
 	
 	/* API for Deleting the Label */
 	
-	@DeleteMapping("/delete-label/{token}")
+	@DeleteMapping("/label/delete/{token}")
 	public ResponseEntity<Responses> deleteLabel(@RequestParam Long labelId, @PathVariable("token") String token) {
 		Long result = labelService.deleteLabel(labelId, token);
 		if (result != null) {
@@ -70,7 +69,7 @@ public class LabelController {
 	
 	/* API for Mapping with the Notes */
 	
-	@PostMapping("/mappingWithNotes/{token}")
+	@PostMapping("/label/mappingWithNotes/{token}")
 	public ResponseEntity<Responses> mappingWithNotes(@RequestParam String labelName, @RequestParam Long noteId,
 			@PathVariable String token) {
 		Label result = labelService.mapWithNotes(labelName, noteId, token);
@@ -82,7 +81,7 @@ public class LabelController {
 	
 	/* API for getting the List of Labels */
 	
-	@GetMapping("/getListOfLabels/{token}")
+	@GetMapping("/label/getlist/{token}")
 	public ResponseEntity<Responses> getLabelList(@PathVariable("token") String token) {
 		List<Label> result = labelService.getAllLabelsList(token);
 		if (result != null) {

@@ -20,7 +20,6 @@ import com.bridgelabz.fundoonotes.service.CollaboratorService;
 
 import io.swagger.annotations.Api;
 
-@Api( description = "API's for the Collaborator controller")
 @RestController
 public class CollaboratorController {
 
@@ -29,7 +28,7 @@ public class CollaboratorController {
 	
 	/* API for Adding the Collaborator */
 	
-	@PostMapping("/AddCollaborator/")
+	@PostMapping("/collaborator/add/")
 	public ResponseEntity<Responses> insertData(@RequestParam String collaboratorMailId, @RequestParam Long noteId) {
 		Collaborator result = collaboratorServ.saveData(collaboratorMailId, noteId);
 		if (result != null) {
@@ -40,7 +39,7 @@ public class CollaboratorController {
 
 	/* API for Deleting the Collaborator */
 	
-	@DeleteMapping("/delete-collaborator/")
+	@DeleteMapping("/collaborator/delete/")
 	public ResponseEntity<Responses> deleteData(@RequestParam String collaboratorMailId) {
 		boolean result = collaboratorServ.deleteData(collaboratorMailId);
 		if (result) {
@@ -51,7 +50,7 @@ public class CollaboratorController {
 	
 	/* API for Listing the Collaborator */
 	
-	@GetMapping("/ListOfCollaborators/")
+	@GetMapping("/collaborator/list/")
 	public ResponseEntity<Responses> getAllCollaborators(@RequestParam Long noteId) {
 		List<Collaborator> result = collaboratorServ.getListOfCollaberators(noteId);
 		if (result != null) {

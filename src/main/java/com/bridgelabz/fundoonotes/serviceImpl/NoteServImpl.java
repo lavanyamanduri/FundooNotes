@@ -12,6 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -27,6 +28,7 @@ import com.bridgelabz.fundoonotes.repository.NotesRepository;
 import com.bridgelabz.fundoonotes.repository.UserRepository;
 import com.bridgelabz.fundoonotes.service.ElasticSearchService;
 import com.bridgelabz.fundoonotes.service.NoteService;
+
 import com.bridgelabz.fundoonotes.utility.JwtUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -44,11 +46,12 @@ public class NoteServImpl implements NoteService {
 	@Autowired
 	private JwtUtil jwt;
 
+	
 	@Autowired
 	private ElasticSearchService elasticSearchService;
 
-	Notes noteModel = new Notes();
-
+	private Notes noteModel = new Notes();
+	private UserDetails user=new UserDetails();
 	LocalDate currentDate = LocalDate.now();
 	LocalTime currentTime = LocalTime.now();
 
@@ -58,20 +61,24 @@ public class NoteServImpl implements NoteService {
 	
 	@SuppressWarnings("unused")
 	@Cacheable(value = "note", key = "#result.getNoteId()", condition = "#result!=null")
+	@Override
 	public Notes addNotes(NotesDto notes, String token) {
 		String tokenDetail = jwt.parse(token);
-		UserDetails user = userRepo.findById(tokenDetail);
-		log.info("creating the notes for " + user.getUserMail());
-		Long id = user.getId();
+		System.out.println(tokenDetail);
+	 user = userRepo.findById(tokenDetail);
+//	System.out.println("creating the notes for " + user.getUserMail());
+		Long ids = user.getId();
+		System.out.println(ids);
 		if (user != null) {
+			System.out.println("########");
+			BeanUtils.copyProperties(notes, noteModel);
 			noteModel.setPin(false);
 			noteModel.setTitle(notes.getNoteTitle());
 			noteModel.setContent(notes.getContent());
 			noteModel.setUser(user);
-			notesRepository.insertNotes(noteModel.getTitle(), noteModel.getContent(), dateTime, id);
-			Notes notes2 = notesRepository.selectLastNotes();
-			elasticSearchService.createData(notes2);
-			return notes2;
+		//	notesRepository.insertNotes(noteModel.getTitle(), noteModel.getContent(), dateTime, ids);
+			notesRepository.save(noteModel);
+			return noteModel;
 		}
 		return null;
 

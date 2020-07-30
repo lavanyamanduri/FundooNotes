@@ -22,6 +22,7 @@ import com.bridgelabz.fundoonotes.model.UserDetails;
 import com.bridgelabz.fundoonotes.repository.UserRepository;
 import com.bridgelabz.fundoonotes.service.UserServ;
 import com.bridgelabz.fundoonotes.utility.JwtUtil;
+import com.bridgelabz.fundoonotes.utility.MailService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -66,6 +67,7 @@ public class UserServImpl implements UserServ {
 			mailDto.setSubject("sendig by fundoo app admin click below link to verify");
 			mailDto.setResponse("http://localhost:8082/checking/" + jwt.jwtGenerateToken(userdetails.getUserMail()));
 			sendMail.produceMsg(mailDto);
+			System.out.println(mailDto);
 			log.info("registered user details is" + userdetails);
 			return userdetails;
 		} else {
@@ -91,13 +93,13 @@ public class UserServImpl implements UserServ {
 					mailDto.setEmail(getMail.getUserMail());
 					mailDto.setSubject("sendig by fundoo app admin");
 					mailDto.setResponse("susccessfully login to fundoo app");
-					sendMail.produceMsg(mailDto);
+			//		sendMail.produceMsg(mailDto);
 					return getMail;
 				} else {
 					mailDto.setEmail(getMail.getUserMail());
 					mailDto.setSubject("sendig by fundoo app admin");
 					mailDto.setResponse("login attempt failed");
-					sendMail.produceMsg(mailDto);
+				//	sendMail.produceMsg(mailDto);
 				}
 			}
 			return null;
@@ -149,7 +151,7 @@ public class UserServImpl implements UserServ {
 				mailDto.setEmail(userMail.getUserMail());
 				mailDto.setSubject("sending by admin");
 				mailDto.setResponse("http://localhost:8082/updatePassword/" + jwt.jwtGenerateToken(email));
-				sendMail.produceMsg(mailDto);
+		//		sendMail.produceMsg(mailDto);
 				return userdetails;
 			}
 		} else {

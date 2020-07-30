@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +28,6 @@ import com.bridgelabz.fundoonotes.service.NoteService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-@Api( description = "API's for the notes controller")
 
 @RestController
 public class NotesController {
@@ -36,19 +36,19 @@ public class NotesController {
 	
 	/* API for Note Creation */
 	
-	@PostMapping("/noteCreation/{token}")
+	@PostMapping("/note/create")
 	@ApiOperation(value = "Creation of note")
-	public ResponseEntity<Responses> createNote(@RequestBody NotesDto note, @PathVariable("token") String token) {
+	public ResponseEntity<Responses> createNote(@RequestBody NotesDto note, @RequestHeader("token") String token) {
 		Notes result = noteService.addNotes(note, token);
 		if (result != null) {
-			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("successfully added", 200));
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body(new Responses("successfully added"+result, 200));
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Responses("not added", 400));
 	}
 	
 	/* API for Color Changing */
 
-	@PutMapping("/changingColor/{token}")
+	@PutMapping("/note/changingcolor/{token}")
 	@ApiOperation(value = "Changing color of a note ")
 	public ResponseEntity<Responses> changingColor(@RequestParam String color, @RequestParam Long noteId,
 			@PathVariable("token") String token) {
@@ -62,7 +62,7 @@ public class NotesController {
 
 	/* API for Pin And To UnPin */
 	
-	@PutMapping("/pinAndUnpin/{token}")
+	@PutMapping("/note/pinAndUnpin/{token}")
 	@ApiOperation(value = "To pin and Upin the note")
 	public ResponseEntity<Responses> changePinning(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.changingPin(noteId, token);
@@ -76,7 +76,7 @@ public class NotesController {
 	
 	/*  API for Archive or UnArchive */
 	
-	@PutMapping("/Archive or unarchive/{token}")
+	@PutMapping("note/archive-or-unarchive/{token}")
 	@ApiOperation(value = "Archive or UnArchive a note")
 	public ResponseEntity<Responses> chageArchieving(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.archievingStatus(noteId, token);
@@ -89,7 +89,7 @@ public class NotesController {
 	}
 	/* API for Updating the note */
 	
-	@PutMapping("/updateNote/{token}")
+	@PutMapping("/note/update/{token}")
 	@ApiOperation(value = "To update the note")
 	public ResponseEntity<Responses> updateNotes(@RequestParam Long noteId, @RequestBody NotesDto notes,
 			@PathVariable("token") String token) throws IOException {
@@ -102,7 +102,7 @@ public class NotesController {
 	
 	/* API for Trash */
 	
-	@DeleteMapping("/trash/{token}")
+	@DeleteMapping("/note/trash/{token}")
 	@ApiOperation(value = "To delete the note")
 	public ResponseEntity<Responses> updateTrash(@RequestParam Long noteId, @PathVariable("token") String token) {
 		int result = noteService.setTrash(noteId, token);
@@ -117,7 +117,7 @@ public class NotesController {
 	
 	/* API for Deleting the notes Permanently*/
 	
-	@DeleteMapping("/deleteNotes-permanantly/{token}")
+	@DeleteMapping("/note/delete-permanantly/{token}")
 	@ApiOperation(value = "To delete the notes permanantly")
 	public ResponseEntity<Responses> deleteNotes(@RequestParam Long noteId, @PathVariable("token") String token) {
 		Long result = noteService.deletePermanent(noteId, token);
@@ -131,7 +131,7 @@ public class NotesController {
 
 	/* API for Remind the Notes at Particular Time */
 	
-	@PutMapping("/remindMeNotes/{token}")
+	@PutMapping("/note/remind/{token}")
 	@ApiOperation(value = "To Remind the not at particular time")
 	public ResponseEntity<Responses> remindNotes(@RequestParam Long noteId, @RequestParam RemindDto remindDto,
 			@PathVariable("token") String token) {
@@ -145,7 +145,7 @@ public class NotesController {
 
 	/* API for listing all the notes */
 	
-	@GetMapping("/LisOfNotes/{token}")
+	@GetMapping("/note/list/{token}")
 	@ApiOperation(value = "List of the notes")
 	public ResponseEntity<Responses> getAllNotes(@PathVariable("token") String token) {
 		List<Notes> result = noteService.getListOfNotes(token);
